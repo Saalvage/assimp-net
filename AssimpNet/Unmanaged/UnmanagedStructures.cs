@@ -105,6 +105,11 @@ namespace Assimp.Unmanaged
         public IntPtr Cameras;
 
         /// <summary>
+        /// aiMetadata*
+        /// </summary>
+        public IntPtr MetaData;
+
+        /// <summary>
         /// void*, Private data do not touch!
         /// </summary>
         public IntPtr PrivateData;
@@ -589,6 +594,10 @@ namespace Assimp.Unmanaged
         /// aiMeshAnim**, mesh animation channels. Each channel affects a single mesh. 
         /// </summary>
         public IntPtr MeshChannels;
+
+        public IntPtr MorphMeshChannels;
+
+        public uint NumMorphMeshChannels;
     }
 
     /// <summary>
@@ -618,6 +627,11 @@ namespace Assimp.Unmanaged
         /// </summary>
         public Vector3 Direction;
 
+        /// <summary>
+        /// Direction up.
+        /// </summary>
+        public Vector3 Up;
+        
         /// <summary>
         /// Attenuation constant value.
         /// </summary>
@@ -657,6 +671,12 @@ namespace Assimp.Unmanaged
         /// Spot light outer angle.
         /// </summary>
         public float AngleOuterCone;
+
+        /// <summary>
+        /// Size of an Area light.
+        /// </summary>
+        public Vector2 Size;
+
     }
 
     /// <summary>
