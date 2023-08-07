@@ -31,6 +31,7 @@ using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using Vector3 = OpenTK.Vector3;
+using Vector4 = System.Numerics.Vector4;
 
 namespace Assimp.Sample
 {
@@ -368,13 +369,13 @@ namespace Assimp.Sample
             return v;
         }
 
-        private Color4 FromColor(Color4D color)
+        private Color4 FromColor(Vector4 color)
         {
             Color4 c;
-            c.R = color.R;
-            c.G = color.G;
-            c.B = color.B;
-            c.A = color.A;
+            c.R = color.X;
+            c.G = color.Y;
+            c.B = color.Z;
+            c.A = color.W;
             return c;
         }
     }

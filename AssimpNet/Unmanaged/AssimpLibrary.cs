@@ -610,8 +610,8 @@ namespace Assimp.Unmanaged
         /// <param name="key">Ai mat key (base) name to search for</param>
         /// <param name="texType">Texture Type semantic, always zero for non-texture properties</param>
         /// <param name="texIndex">Texture index, always zero for non-texture properties</param>
-        /// <returns>The color if it exists. If not, the default Color4D value is returned.</returns>
-        public Color4D GetMaterialColor(ref AiMaterial mat, String key, TextureType texType, uint texIndex)
+        /// <returns>The color if it exists. If not, the default Vector4 value is returned.</returns>
+        public Vector4 GetMaterialColor(ref AiMaterial mat, String key, TextureType texType, uint texIndex)
         {
             LoadIfNotLoaded();
 
@@ -620,11 +620,11 @@ namespace Assimp.Unmanaged
             IntPtr ptr = IntPtr.Zero;
             try
             {
-                ptr = MemoryHelper.AllocateMemory(MemoryHelper.SizeOf<Color4D>());
+                ptr = MemoryHelper.AllocateMemory(MemoryHelper.SizeOf<Vector4>());
                 ReturnCode code = func(ref mat, key, (uint) texType, texIndex, ptr);
-                Color4D color = new Color4D();
+                Vector4 color = new Vector4();
                 if(code == ReturnCode.Success && ptr != IntPtr.Zero)
-                    color = MemoryHelper.Read<Color4D>(ptr);
+                    color = MemoryHelper.Read<Vector4>(ptr);
                 
                 return color;
             }

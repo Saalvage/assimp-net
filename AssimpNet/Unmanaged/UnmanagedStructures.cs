@@ -243,7 +243,7 @@ namespace Assimp.Unmanaged
         public IntPtr BiTangents;
 
         /// <summary>
-        /// aiColor4D*[Max_Value], array of arrays of vertex colors. Max_Value is defined as <see cref="AiDefines.AI_MAX_NUMBER_OF_COLOR_SETS"/>.
+        /// aiVector4*[Max_Value], array of arrays of vertex colors. Max_Value is defined as <see cref="AiDefines.AI_MAX_NUMBER_OF_COLOR_SETS"/>.
         /// </summary>
         public AiMeshColorArray Colors;
 
@@ -636,17 +636,17 @@ namespace Assimp.Unmanaged
         /// <summary>
         /// Diffuse color.
         /// </summary>
-        public Color3D ColorDiffuse;
+        public Vector3 ColorDiffuse;
 
         /// <summary>
         /// Specular color.
         /// </summary>
-        public Color3D ColorSpecular;
+        public Vector3 ColorSpecular;
 
         /// <summary>
         /// Ambient color.
         /// </summary>
-        public Color3D ColorAmbient;
+        public Vector3 ColorAmbient;
 
         /// <summary>
         /// Spot light inner angle.
@@ -903,7 +903,7 @@ namespace Assimp.Unmanaged
         public IntPtr BiTangents;
 
         /// <summary>
-        /// aiColor4D*[Max_Value], array of arrays of vertex colors. Max_Value is defined as <see cref="AiDefines.AI_MAX_NUMBER_OF_COLOR_SETS"/>.
+        /// aiVector4*[Max_Value], array of arrays of vertex colors. Max_Value is defined as <see cref="AiDefines.AI_MAX_NUMBER_OF_COLOR_SETS"/>.
         /// </summary>
         public AiMeshColorArray Colors;
 

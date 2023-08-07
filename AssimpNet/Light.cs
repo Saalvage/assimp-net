@@ -46,9 +46,9 @@ namespace Assimp
         private float m_attQuadratic;
         private Vector3 m_position;
         private Vector3 m_direction;
-        private Color3D m_diffuse;
-        private Color3D m_specular;
-        private Color3D m_ambient;
+        private Vector3 m_diffuse;
+        private Vector3 m_specular;
+        private Vector3 m_ambient;
 
         /// <summary>
         /// Gets or sets the name of the light source. This corresponds to a node present in the scenegraph.
@@ -202,7 +202,7 @@ namespace Assimp
         /// Gets or sets the diffuse color of the light source.  The diffuse light color is multiplied with
         /// the diffuse material color to obtain the final color that contributes to the diffuse shading term.
         /// </summary>
-        public Color3D ColorDiffuse
+        public Vector3 ColorDiffuse
         {
             get
             {
@@ -218,7 +218,7 @@ namespace Assimp
         /// Gets or sets the specular color of the light source. The specular light color is multiplied with the
         /// specular material color to obtain the final color that contributes to the specular shading term.
         /// </summary>
-        public Color3D ColorSpecular
+        public Vector3 ColorSpecular
         {
             get
             {
@@ -234,7 +234,7 @@ namespace Assimp
         /// Gets or sets the ambient color of the light source. The ambient light color is multiplied with the ambient
         /// material color to obtain the final color that contributes to the ambient shading term.
         /// </summary>
-        public Color3D ColorAmbient
+        public Vector3 ColorAmbient
         {
             get
             {

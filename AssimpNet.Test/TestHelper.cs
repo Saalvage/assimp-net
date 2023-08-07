@@ -97,34 +97,20 @@ namespace Assimp.Test
             AssertEquals(z, v.Z, msg + String.Format(" => checking Z component ({0} == {1}", z, v.Z));
         }
 
-        public static void AssertEquals(float r, float g, float b, float a, Color4D c)
+        public static void AssertEquals(float r, float g, float b, float a, Vector4 c)
         {
-            AssertEquals(r, c.R);
-            AssertEquals(g, c.G);
-            AssertEquals(b, c.B);
-            AssertEquals(a, c.A);
+            AssertEquals(r, c.X);
+            AssertEquals(g, c.Y);
+            AssertEquals(b, c.Z);
+            AssertEquals(a, c.W);
         }
 
-        public static void AssertEquals(float r, float g, float b, float a, Color4D c, String msg)
+        public static void AssertEquals(float r, float g, float b, float a, Vector4 c, String msg)
         {
-            AssertEquals(r, c.R, msg + String.Format(" => checking R component ({0} == {1}", r, c.R));
-            AssertEquals(g, c.G, msg + String.Format(" => checking G component ({0} == {1}", g, c.G));
-            AssertEquals(b, c.B, msg + String.Format(" => checking B component ({0} == {1}", b, c.B));
-            AssertEquals(a, c.A, msg + String.Format(" => checking A component ({0} == {1}", a, c.A));
-        }
-
-        public static void AssertEquals(float r, float g, float b, Color3D c)
-        {
-            AssertEquals(r, c.R);
-            AssertEquals(g, c.G);
-            AssertEquals(b, c.B);
-        }
-
-        public static void AssertEquals(float r, float g, float b, Color3D c, String msg)
-        {
-            AssertEquals(r, c.R, msg + String.Format(" => checking R component ({0} == {1}", r, c.R));
-            AssertEquals(g, c.G, msg + String.Format(" => checking G component ({0} == {1}", g, c.G));
-            AssertEquals(b, c.B, msg + String.Format(" => checking B component ({0} == {1}", b, c.B));
+            AssertEquals(r, c.X, msg + String.Format(" => checking R component ({0} == {1}", r, c.X));
+            AssertEquals(g, c.Y, msg + String.Format(" => checking G component ({0} == {1}", g, c.Y));
+            AssertEquals(b, c.Z, msg + String.Format(" => checking B component ({0} == {1}", b, c.Z));
+            AssertEquals(a, c.W, msg + String.Format(" => checking A component ({0} == {1}", a, c.W));
         }
 
         public static void AssertEquals(float x, float y, float z, float w, Quaternion q, String msg)
