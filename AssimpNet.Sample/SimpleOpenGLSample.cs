@@ -24,11 +24,13 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Numerics;
 using System.Reflection;
 using Assimp.Configs;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
+using Vector3 = OpenTK.Vector3;
 
 namespace Assimp.Sample
 {
@@ -338,26 +340,26 @@ namespace Assimp.Sample
         private Matrix4 FromMatrix(Matrix4x4 mat)
         {
             Matrix4 m = new Matrix4();
-            m.M11 = mat.A1;
-            m.M12 = mat.A2;
-            m.M13 = mat.A3;
-            m.M14 = mat.A4;
-            m.M21 = mat.B1;
-            m.M22 = mat.B2;
-            m.M23 = mat.B3;
-            m.M24 = mat.B4;
-            m.M31 = mat.C1;
-            m.M32 = mat.C2;
-            m.M33 = mat.C3;
-            m.M34 = mat.C4;
-            m.M41 = mat.D1;
-            m.M42 = mat.D2;
-            m.M43 = mat.D3;
-            m.M44 = mat.D4;
+            m.M11 = mat.M11;
+            m.M12 = mat.M12;
+            m.M13 = mat.M13;
+            m.M14 = mat.M14;
+            m.M21 = mat.M21;
+            m.M22 = mat.M22;
+            m.M23 = mat.M23;
+            m.M24 = mat.M24;
+            m.M31 = mat.M31;
+            m.M32 = mat.M32;
+            m.M33 = mat.M33;
+            m.M34 = mat.M34;
+            m.M41 = mat.M41;
+            m.M42 = mat.M42;
+            m.M43 = mat.M43;
+            m.M44 = mat.M44;
             return m;
         }
 
-        private Vector3 FromVector(Vector3D vec)
+        private Vector3 FromVector(System.Numerics.Vector3 vec)
         {
             Vector3 v;
             v.X = vec.X;

@@ -2,9 +2,14 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netframework4.7</TargetFramework>
+    <TargetFramework>netframework5.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AssimpNet\AssimpNet.csproj" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="OpenTK">
@@ -20,14 +25,9 @@
     <None Include="duck.dae">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="duckCM.bmp">
+    <None Include="duckCM.bmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AssimpNet\AssimpNet.csproj" />
+    </None>
   </ItemGroup>
 
 </Project>

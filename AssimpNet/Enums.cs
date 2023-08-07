@@ -55,9 +55,9 @@ namespace Assimp
         String = 4,
 
         /// <summary>
-        /// Metadata is a <see cref="Vector3D"/>.
+        /// Metadata is a <see cref="Vector3"/>.
         /// </summary>
-        Vector3D = 5
+        Vector3 = 5
     }
 
     /// <summary>

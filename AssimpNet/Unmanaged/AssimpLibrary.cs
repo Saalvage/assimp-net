@@ -23,6 +23,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Numerics;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using NativeLibraryLoader;
@@ -923,7 +924,7 @@ namespace Assimp.Unmanaged
         /// <param name="scaling">Scaling vector</param>
         /// <param name="rotation">Quaternion containing the rotation</param>
         /// <param name="position">Translation vector</param>
-        public void DecomposeMatrix(ref Matrix4x4 mat, out Vector3D scaling, out Quaternion rotation, out Vector3D position)
+        public void DecomposeMatrix(ref Matrix4x4 mat, out Vector3 scaling, out Quaternion rotation, out Vector3 position)
         {
             LoadIfNotLoaded();
 
@@ -963,7 +964,7 @@ namespace Assimp.Unmanaged
         /// </summary>
         /// <param name="vec">Vector to transform</param>
         /// <param name="mat">Rotation matrix</param>
-        public void TransformVecByMatrix3(ref Vector3D vec, ref Matrix3x3 mat)
+        public void TransformVecByMatrix3(ref Vector3 vec, ref Matrix3x3 mat)
         {
             LoadIfNotLoaded();
 
@@ -977,7 +978,7 @@ namespace Assimp.Unmanaged
         /// </summary>
         /// <param name="vec">Vector to transform</param>
         /// <param name="mat">Matrix transformation</param>
-        public void TransformVecByMatrix4(ref Vector3D vec, ref Matrix4x4 mat)
+        public void TransformVecByMatrix4(ref Vector3 vec, ref Matrix4x4 mat)
         {
             LoadIfNotLoaded();
 
@@ -1387,7 +1388,7 @@ namespace Assimp.Unmanaged
         public delegate void aiCreateQuaternionFromMatrix(out Quaternion quat, ref Matrix3x3 mat);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl), AssimpFunctionName(AssimpFunctionNames.aiDecomposeMatrix)]
-        public delegate void aiDecomposeMatrix(ref Matrix4x4 mat, out Vector3D scaling, out Quaternion rotation, out Vector3D position);
+        public delegate void aiDecomposeMatrix(ref Matrix4x4 mat, out Vector3 scaling, out Quaternion rotation, out Vector3 position);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl), AssimpFunctionName(AssimpFunctionNames.aiTransposeMatrix4)]
         public delegate void aiTransposeMatrix4(ref Matrix4x4 mat);
@@ -1396,10 +1397,10 @@ namespace Assimp.Unmanaged
         public delegate void aiTransposeMatrix3(ref Matrix3x3 mat);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl), AssimpFunctionName(AssimpFunctionNames.aiTransformVecByMatrix3)]
-        public delegate void aiTransformVecByMatrix3(ref Vector3D vec, ref Matrix3x3 mat);
+        public delegate void aiTransformVecByMatrix3(ref Vector3 vec, ref Matrix3x3 mat);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl), AssimpFunctionName(AssimpFunctionNames.aiTransformVecByMatrix4)]
-        public delegate void aiTransformVecByMatrix4(ref Vector3D vec, ref Matrix4x4 mat);
+        public delegate void aiTransformVecByMatrix4(ref Vector3 vec, ref Matrix4x4 mat);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl), AssimpFunctionName(AssimpFunctionNames.aiMultiplyMatrix4)]
         public delegate void aiMultiplyMatrix4(ref Matrix4x4 dst, ref Matrix4x4 src);

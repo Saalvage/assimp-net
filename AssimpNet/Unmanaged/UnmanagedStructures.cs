@@ -21,6 +21,7 @@
 */
 
 using System;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -222,22 +223,22 @@ namespace Assimp.Unmanaged
         public uint NumFaces;
 
         /// <summary>
-        /// aiVector3D*, array of positions.
+        /// aiVector3*, array of positions.
         /// </summary>
         public IntPtr Vertices;
 
         /// <summary>
-        /// aiVector3D*, array of normals.
+        /// aiVector3*, array of normals.
         /// </summary>
         public IntPtr Normals;
 
         /// <summary>
-        /// aiVector3D*, array of tangents.
+        /// aiVector3*, array of tangents.
         /// </summary>
         public IntPtr Tangents;
 
         /// <summary>
-        /// aiVector3D*, array of bitangents.
+        /// aiVector3*, array of bitangents.
         /// </summary>
         public IntPtr BiTangents;
 
@@ -247,7 +248,7 @@ namespace Assimp.Unmanaged
         public AiMeshColorArray Colors;
 
         /// <summary>
-        /// aiVector3D*[Max_Value], array of arrays of texture coordinates. Max_Value is defined as <see cref="AiDefines.AI_MAX_NUMBER_OF_TEXTURECOORDS"/>.
+        /// aiVector3*[Max_Value], array of arrays of texture coordinates. Max_Value is defined as <see cref="AiDefines.AI_MAX_NUMBER_OF_TEXTURECOORDS"/>.
         /// </summary>
         public AiMeshTextureCoordinateArray TextureCoords;
 
@@ -610,12 +611,12 @@ namespace Assimp.Unmanaged
         /// <summary>
         /// Position of the light.
         /// </summary>
-        public Vector3D Position;
+        public Vector3 Position;
 
         /// <summary>
         /// Direction of the spot/directional light.
         /// </summary>
-        public Vector3D Direction;
+        public Vector3 Direction;
 
         /// <summary>
         /// Attenuation constant value.
@@ -673,17 +674,17 @@ namespace Assimp.Unmanaged
         /// <summary>
         /// Position of the camera.
         /// </summary>
-        public Vector3D Position;
+        public Vector3 Position;
 
         /// <summary>
         /// Up vector of the camera.
         /// </summary>
-        public Vector3D Up;
+        public Vector3 Up;
 
         /// <summary>
         /// Viewing direction of the camera.
         /// </summary>
-        public Vector3D LookAt;
+        public Vector3 LookAt;
 
         /// <summary>
         /// Field Of View of the camera.
@@ -882,22 +883,22 @@ namespace Assimp.Unmanaged
     public struct AiAnimMesh
     {
         /// <summary>
-        /// aiVector3D*, replacement position array.
+        /// aiVector3*, replacement position array.
         /// </summary>
         public IntPtr Vertices;
 
         /// <summary>
-        /// aiVector3D*, replacement normal array.
+        /// aiVector3*, replacement normal array.
         /// </summary>
         public IntPtr Normals;
 
         /// <summary>
-        /// aiVector3D*, replacement tangent array.
+        /// aiVector3*, replacement tangent array.
         /// </summary>
         public IntPtr Tangents;
 
         /// <summary>
-        /// aiVector3D*, replacement bitangent array.
+        /// aiVector3*, replacement bitangent array.
         /// </summary>
         public IntPtr BiTangents;
 
@@ -907,7 +908,7 @@ namespace Assimp.Unmanaged
         public AiMeshColorArray Colors;
 
         /// <summary>
-        /// aiVector3D*[Max_Value], array of arrays of texture coordinates. Max_Value is defined as <see cref="AiDefines.AI_MAX_NUMBER_OF_TEXTURECOORDS"/>.
+        /// aiVector3*[Max_Value], array of arrays of texture coordinates. Max_Value is defined as <see cref="AiDefines.AI_MAX_NUMBER_OF_TEXTURECOORDS"/>.
         /// </summary>
         public AiMeshTextureCoordinateArray TextureCoords;
 
