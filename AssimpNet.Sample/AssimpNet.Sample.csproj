@@ -9,15 +9,8 @@
   <ItemGroup>
     <ProjectReference Include="..\AssimpNet\AssimpNet.csproj" />
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="OpenTK">
-      <HintPath>..\libs\OpenTK\OpenTK.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenTK.GLControl">
-      <HintPath>..\libs\OpenTK\OpenTK.GLControl.dll</HintPath>
-    </Reference>
+    <PackageReference Include="OpenTK" Version="3.3.3" />
+    <PackageReference Include="OpenTK.GLControl" Version="3.3.3" />
   </ItemGroup>
 
   <ItemGroup>

@@ -30,6 +30,7 @@ using Assimp.Configs;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
+using OpenTK.Input;
 using Vector3 = OpenTK.Vector3;
 using Vector4 = System.Numerics.Vector4;
 
@@ -73,8 +74,9 @@ namespace Assimp.Sample
         {
             Matrix4 prev = trafo;
             trafo = Matrix4.Mult(prev, FromMatrix(node.Transform));
+            Matrix3 trafo3 = new Matrix3(trafo);
 
-            if(node.HasMeshes)
+            if (node.HasMeshes)
             {
                 foreach(int index in node.MeshIndices)
                 {
@@ -82,7 +84,7 @@ namespace Assimp.Sample
                     for(int i = 0; i < mesh.VertexCount; i++)
                     {
                         Vector3 tmp = FromVector(mesh.Vertices[i]);
-                        Vector3.Transform(ref tmp, ref trafo, out tmp);
+                        Vector3.Transform(ref tmp, ref trafo3, out tmp);
 
                         min.X = Math.Min(min.X, tmp.X);
                         min.Y = Math.Min(min.Y, tmp.Y);
@@ -117,7 +119,12 @@ namespace Assimp.Sample
             {
                 m_angle = 0.0f;
             }
-            if(Keyboard[OpenTK.Input.Key.Escape])
+        }
+
+        protected override void OnKeyDown(KeyboardKeyEventArgs e) {
+            base.OnKeyDown(e);
+
+            if(e.Key == Key.Escape)
             {
                 this.Exit();
             }
