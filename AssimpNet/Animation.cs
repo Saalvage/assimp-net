@@ -166,7 +166,7 @@ namespace Assimp {
             nativeValue.MeshChannels = IntPtr.Zero;
             nativeValue.MorphMeshChannels = IntPtr.Zero;
 
-            if (nativeValue.NumChannels > 0)
+            if(nativeValue.NumChannels > 0)
                 nativeValue.Channels = MemoryHelper.ToNativeArray<NodeAnimationChannel, AiNodeAnim>(m_nodeChannels.ToArray(), true);
 
             if(nativeValue.NumMeshChannels > 0)
