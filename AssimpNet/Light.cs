@@ -46,6 +46,8 @@ namespace Assimp
         private float m_attQuadratic;
         private Vector3 m_position;
         private Vector3 m_direction;
+        private Vector3 m_up;
+        private Vector2 m_size;
         private Vector3 m_diffuse;
         private Vector3 m_specular;
         private Vector3 m_ambient;
@@ -199,6 +201,36 @@ namespace Assimp
         }
 
         /// <summary>
+        /// Gets or sets the direction up.
+        /// </summary>
+        public Vector3 Up
+        {
+            get
+            {
+                return m_up;
+            }
+            set
+            {
+                m_up = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets size of an Area light.
+        /// </summary>
+        public Vector2 Size
+        {
+            get
+            {
+                return m_size;
+            }
+            set
+            {
+                m_size = value;
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the diffuse color of the light source.  The diffuse light color is multiplied with
         /// the diffuse material color to obtain the final color that contributes to the diffuse shading term.
         /// </summary>
@@ -283,6 +315,8 @@ namespace Assimp
             nativeValue.ColorSpecular = m_specular;
             nativeValue.Direction = m_direction;
             nativeValue.Position = m_position;
+            nativeValue.Up = m_up;
+            nativeValue.Size = m_size;
         }
 
         /// <summary>
@@ -303,6 +337,8 @@ namespace Assimp
             m_diffuse = nativeValue.ColorDiffuse;
             m_specular = nativeValue.ColorSpecular;
             m_ambient = nativeValue.ColorAmbient;
+            m_up = nativeValue.Up;
+            m_size = nativeValue.Size;
         }
 
         /// <summary>
