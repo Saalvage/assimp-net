@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.33927.210
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssimpNet", "AssimpNet\AssimpNet.csproj", "{6D25B4BB-8406-4A41-A6C1-9546B75D76D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssimpNet.Test", "AssimpNet.Test\AssimpNet.Test.csproj", "{8452AA01-1C08-4454-A897-4CBDC925B505}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{6D25B4BB-8406-4A41-A6C1-9546B75D76D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D25B4BB-8406-4A41-A6C1-9546B75D76D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D25B4BB-8406-4A41-A6C1-9546B75D76D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8452AA01-1C08-4454-A897-4CBDC925B505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8452AA01-1C08-4454-A897-4CBDC925B505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8452AA01-1C08-4454-A897-4CBDC925B505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8452AA01-1C08-4454-A897-4CBDC925B505}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BB5B20E-817E-491B-BBFE-9D0E8A790164}
 	EndGlobalSection
 EndGlobal
