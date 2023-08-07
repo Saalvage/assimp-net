@@ -566,16 +566,14 @@ namespace Assimp
                 float c2 = 2.0f / Vector3.Dot(v, v);
                 float c3 = c1 * c2 * Vector3.Dot(u, v);
 
-                //AAAAAAAAAAAAA
-                m[0, 0] = -c1 * u.X * u.X - c2 * v.X * v.X + c3 * v.X * u.X + 1;
-                m[0, 1] = -c1 * u.X * u.Y - c2 * v.X * v.Y + c3 * v.X * u.Y;
-                m[0, 2] = -c1 * u.X * u.Z - c2 * v.X * v.Z + c3 * v.X * u.Z;
-                m[1, 0] = -c1 * u.Y * u.X - c2 * v.Y * v.X + c3 * v.Y * u.X;
-                m[1, 1] = -c1 * u.Y * u.Y - c2 * v.Y * v.Y + c3 * v.Y * u.Y + 1;
-                m[1, 2] = -c1 * u.Y * u.Z - c2 * v.Y * v.Z + c3 * v.Y * u.Z;
-                m[2, 0] = -c1 * u.Z * u.X - c2 * v.Z * v.X + c3 * v.Z * u.X;
-                m[2, 1] = -c1 * u.Z * u.Y - c2 * v.Z * v.Y + c3 * v.Z * u.Y;
-                m[2, 2] = -c1 * u.Z * u.Z - c2 * v.Z * v.Z + c3 * v.Z * u.Z + 1;
+                for (int i = 1; i < 4; i++) {
+                    for (int j = 1; j < 4; j++) {
+                        //This is somewhat unreadable, but the indices for u, v vectors are "zero-based" while
+                        //matrix indices are "one-based" always subtract by one to index those
+                        m[i, j] = -c1 * u[i] * u[j] - c2 * v[i] * v[j] + c3 * v[i] * u[j];
+                    }
+                    m[i, i] += 1.0f;
+                }
 
             }
             else
